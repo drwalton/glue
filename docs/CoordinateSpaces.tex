@@ -1,0 +1,26 @@
+\documentclass{article}
+
+\title{Coordinate Spaces in glue}
+
+\begin{document}
+
+\maketitle
+
+\section{Camera, World and Object Spaces}
+
+This document will outline the conventions that glue uses for coordinate systems and transforms (world space, camera space etc.).
+
+Transforms from object space to world space to camera space are generally pure rigid transforms - the coordinate system should be unchanged.
+
+In camera space, the camera is considered to look along the negative z-axis, with the positive y-axis being upward, and the positive x-axis being right from the camera's perspective.
+
+\section{Texture Co-ordinates}
+
+In OpenGL, textures are conventionally supplied to the API in row-major order, with rows running from the bottom to the top of the image. This is different to the way images are stored in memory in libraries such as OpenCV.
+
+For this reason, many fragment shaders included with glue invert the y component of the texture coordinates just before access. This allows textures to be supplied directly from OpenCV without modification, which can avoid unnecessary computation and memory usage incurred when flipping the the image.
+
+All shaders which access textures ``upside-down" are suffixed with the word ``Flip" - for example, ``FullScreenTexFlip.frag". Many such shaders will have a non-flipped counterpart, which is identical apart from this texture access flip (in this case, ``FullScreenTex.frag".
+
+\end{document}
+

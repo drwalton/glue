@@ -1,0 +1,15 @@
+#version 430
+
+layout (local_size_x=1, local_size_y=1) in;
+layout (rgba8ui, binding=0) uniform uimage2D image;
+uniform float time;
+
+void main()
+{
+	uint r = gl_GlobalInvocationID.x;
+	uint c = gl_GlobalInvocationID.y;
+	ivec2 pixelCoords = ivec2(r, c);
+	uvec4 val = uvec4((r+uint(time*100)) % 255, c % 255, 255, 255);
+	imageStore(image, pixelCoords, val);
+}
+

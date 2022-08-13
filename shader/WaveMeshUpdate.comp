@@ -1,0 +1,30 @@
+#version 430
+
+layout(local_size_x=1, local_size_y=1) in;
+uniform float time;
+uniform float freq;
+uniform float height;
+layout( std140, binding=0 ) buffer Verts {
+	vec4 vert[];
+};
+
+layout( std140, binding=1 ) buffer Norms {
+	vec4 norm[];
+};
+
+
+void main()
+{
+	uint x = gl_GlobalInvocationID.x;
+	uint y = gl_GlobalInvocationID.y;
+	uint idx = x * gl_NumWorkGroups.y * gl_WorkGroupSize.y + y;
+
+	float theta = freq*vert[idx].x + time;
+	float phi = freq*vert[idx].z + time;
+	vert[idx].y = height*sin(theta)*cos(phi);
+	vec3 norm3 = cross(
+			vec3(1, height*cos(theta)*cos(phi),  0),
+			vec3(0, -height*sin(theta)*sin(phi), -1));
+
+	norm[idx].xyz = normalize(norm3);
+}

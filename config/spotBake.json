@@ -1,0 +1,13 @@
+{
+	"width": 1024,
+	"height": 1024,
+	"nSamples": 500,
+	"nBands": 4,
+	"nBounces": 2,
+	"modelFilename": "G:/local/glue/model/spot/spotOnPlane.obj",
+	"modelFilename1": "G:/local/glue/model/spot/spotJustPlane.obj",
+	"albedoTexFilename": "G:/local/glue/model/spot/spotOnGreenPlane.png",
+	"albedoTexFilename1": "G:/local/glue/model/spot/spotOnPlane.png",
+	"useSpecularMesh": false
+}
+

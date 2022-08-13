@@ -1,0 +1,13 @@
+{
+	"width": 1024,
+	"height": 1024,
+	"nSamples": 500,
+	"nBands": 4,
+	"nBounces": 2,
+	"modelFilename1": "G:/local/hqar/models/teapotOnPlane.obj",
+	"modelFilename": "G:/local/hqar/models/teapotJustPlane.obj",
+	"modelFilename1": "G:/local/hqar/models/teapotNoPlane.obj",
+	"albedoTexFilename": "G:/local/hqar/models/brightgreen.jpg",
+	"useSpecularMesh": false
+}
+

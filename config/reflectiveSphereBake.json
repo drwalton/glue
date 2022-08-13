@@ -1,0 +1,13 @@
+{
+	"width": 1024,
+	"height": 1024,
+	"nSamples": 500,
+	"nBands": 4,
+	"nBounces": 2,
+	"modelFilename1": "G:/local/hqar/models/sphereOnPlane.obj",
+	"modelFilename": "G:/local/hqar/models/sphereJustPlane.obj",
+	"specularMeshFilename": "G:/local/hqar/models/sphereNoPlane.obj",
+	"albedoTexFilename": "G:/local/hqar/models/white.jpg",
+	"useSpecularMesh": true
+}
+
